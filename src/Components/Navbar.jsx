@@ -1,10 +1,26 @@
 import { ArrowDropDown, Notifications, Search } from "@material-ui/icons"
 import React from "react"
+import { useState } from "react"
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  window.onscroll = () => {
+    setIsScrolled(window.pageYOffset === 0 ? false : true)
+    return () => (window.onscroll = null)
+  }
+  // Check if Scroll is Working
+  // console.log(isScrolled)
+
   return (
-    <div class="bg-primary container">
-      <div class="text-white h-24 flex items-center justify-between">
+    <div
+      class={
+        isScrolled
+          ? "fixed top-0 w-full z-999 bg-primary"
+          : "fixed top-0 w-full z-999 bg-gradient"
+      }
+    >
+      <div class="text-white h-24 flex items-center justify-between container">
         {/* Left */}
         <div class="flex items-center justify-between">
           <img

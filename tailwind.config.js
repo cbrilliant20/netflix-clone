@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       colors: {
         primary: "#0b0b0b",
+        gradient:
+          // "linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,.3) 50%)",
+          "linear-gradient(to top, transparent 0%, rgb(0,0,0,.3) 50%)",
       },
     },
     fontFamily: {
